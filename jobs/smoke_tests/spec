@@ -70,3 +70,9 @@ properties:
   smoke_tests.enable_isolation_segment_tests:
     default: false
     description: Flag to true if you wish to run routing isolation segment tests
+  smoke_tests.ruby_buildpack:
+    default: ruby_buildpack
+    description: Buildpack name to use when pushing ruby applications
+  smoke_tests.binary_buildpack:
+    default: binary_buildpack
+    description: Buildpack name to use when pushing binary applications
