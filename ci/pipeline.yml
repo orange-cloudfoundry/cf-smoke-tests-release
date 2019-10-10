@@ -114,6 +114,21 @@ jobs:
       repository: updated-repository
       rebase: true
 
+- name: bump-cf-smoke-tests
+  public: true
+  plan:
+  - in_parallel:
+    - get: cf-smoke-tests-release
+    - get: runtime-ci
+    - get: cf-smoke-tests
+      trigger: true
+  - task: bump-cf-smoke-tests
+    file: runtime-ci/tasks/bump-cf-smoke-tests/task.yml
+  - put: cf-smoke-tests-release
+    params:
+      repository: updated-cf-smoke-tests-release
+      rebase: true
+
 - name: stable-acquire-pool
   public: true
   serial: true
@@ -154,6 +169,7 @@ jobs:
     params:
       BBL_STATE_DIR: environments/test/bellatrix/bbl-state
       SYSTEM_DOMAIN: bellatrix.cf-app.com
+      CREDHUB_ENV_NAME: bosh-bellatrix-stable
 
 - name: run-smokes-errand
   serial_groups:
