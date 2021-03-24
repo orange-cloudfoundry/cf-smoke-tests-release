@@ -143,6 +143,8 @@ builds:
     version: "21"
   4e1744fc-2d0e-4ebf-4f50-fe3d88d4fc52:
     version: 40.0.92
+  4e3279ce-7468-431b-6045-9d95362fcf2f:
+    version: 41.0.2-ora5
   526bf029-64fe-4b62-7088-d3e1c8075efc:
     version: 40.0.20
   5347b528-bd85-4289-5a26-6269c8f022e6:
